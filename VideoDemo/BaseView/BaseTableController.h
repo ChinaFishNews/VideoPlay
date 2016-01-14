@@ -10,7 +10,6 @@
 
 @interface BaseTableController : UITableViewController
 
-
 - (void)setExtraCellLineHidden: (UITableView *)tableView;
 
 @end
