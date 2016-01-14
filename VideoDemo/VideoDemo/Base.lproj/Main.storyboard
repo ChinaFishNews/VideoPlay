@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b0j-yi-gbo">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Remote Video Display2-->
+        <scene sceneID="7W1-r7-crI">
+            <objects>
+                <viewController id="b7f-2M-Qr4" customClass="RemoteVideoDisplay2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FPq-ga-NSh"/>
+                        <viewControllerLayoutGuide type="bottom" id="dV2-af-MSg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hnU-0U-XvT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fs8-Hr-eOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268" y="1226"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="bC5-FN-qAu">
+            <objects>
+                <tableViewController id="9lX-37-3yX" customClass="ViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="li1-Ke-liB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="akE-PL-3Xe">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="akE-PL-3Xe" id="vXQ-eC-aes">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9lX-37-3yX" id="azy-Ot-wPs"/>
+                            <outlet property="delegate" destination="9lX-37-3yX" id="zhb-Nx-gUo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Byb-rm-zUk"/>
+                    <connections>
+                        <segue destination="Ugc-sG-hUz" kind="show" identifier="LocalVideoDisplay" id="n2i-KF-fc5"/>
+                        <segue destination="qkD-K5-7QF" kind="show" identifier="RemoteVideoDisplay" id="9Ws-lr-h3M"/>
+                        <segue destination="j9A-Ha-69H" kind="show" identifier="AVPlayerLocalVideoControlller" id="Zs9-Cb-Cty"/>
+                        <segue destination="mIk-nn-VXS" kind="show" identifier="AVPlayerRemoteVideoControlller" id="b4P-Oo-wOZ"/>
+                        <segue destination="tA2-Wl-BXc" kind="show" identifier="LocalVideoDisplay2" id="TOw-gX-QIW"/>
+                        <segue destination="b7f-2M-Qr4" kind="show" identifier="RemoteVideoDisplay2" id="hTV-Va-l2y"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LiM-3b-Tlg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="222" y="630"/>
+        </scene>
+        <!--Remote Video Display-->
+        <scene sceneID="7VF-BM-zhk">
+            <objects>
+                <viewController id="qkD-K5-7QF" customClass="RemoteVideoDisplay" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="abc-Qg-ZiH"/>
+                        <viewControllerLayoutGuide type="bottom" id="vY8-I8-SAe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TAA-As-yjy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lOX-DF-cDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="685" y="515"/>
+        </scene>
+        <!--Player Local Video Controlller-->
+        <scene sceneID="xBf-MI-gKC">
+            <objects>
+                <viewController id="j9A-Ha-69H" customClass="AVPlayerLocalVideoControlller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x7M-Tw-Is2"/>
+                        <viewControllerLayoutGuide type="bottom" id="RSJ-fU-lxY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Izu-i9-3JJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcp-hh-27F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="1140"/>
+        </scene>
+        <!--Local Video Display2-->
+        <scene sceneID="dQi-WY-cjF">
+            <objects>
+                <viewController id="tA2-Wl-BXc" customClass="LocalVideoDisplay2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o6p-nf-eT0"/>
+                        <viewControllerLayoutGuide type="bottom" id="eSn-T5-zS2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vph-bk-6z6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9BE-3d-C0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="1517"/>
+        </scene>
+        <!--Player Remote Video Controlller-->
+        <scene sceneID="886-qe-Idy">
+            <objects>
+                <viewController storyboardIdentifier="AVPlayeRemoteVideoControlller" id="mIk-nn-VXS" customClass="AVPlayerRemoteVideoControlller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WtW-tV-aiA"/>
+                        <viewControllerLayoutGuide type="bottom" id="OcP-H8-857"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pg5-xH-Rtu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0YS-lQ-bQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="394" y="1298"/>
+        </scene>
+        <!--Local Video Display-->
+        <scene sceneID="AYP-Fh-kmh">
+            <objects>
+                <viewController id="Ugc-sG-hUz" customClass="LocalVideoDisplay" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pPX-0D-5lP"/>
+                        <viewControllerLayoutGuide type="bottom" id="oLA-6H-qdx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EHa-hY-fhF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lr5-uz-JFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="685" y="-111"/>
+        </scene>
+        <!--Base Navigation Controller-->
+        <scene sceneID="uMB-a4-KpJ">
+            <objects>
+                <navigationController id="b0j-yi-gbo" customClass="BaseNavigationController" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="var-O6-9sF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9lX-37-3yX" kind="relationship" relationship="rootViewController" id="jj8-xy-f8y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XPh-PR-rFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263" y="412"/>
+        </scene>
+    </scenes>
+</document>
