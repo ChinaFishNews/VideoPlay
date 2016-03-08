@@ -56,25 +56,27 @@
         //1 监听播放状态
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(stateChange) name:MPMoviePlayerPlaybackStateDidChangeNotification object:_moviePlayer];
         //        //2 监听播放完成
-        //        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(finishedPlay) name:MPMoviePlayerPlaybackDidFinishNotification object:_moviePlayer];
+//                [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(finishedPlay) name:MPMoviePlayerPlaybackDidFinishNotification object:_moviePlayer];
         //        //3视频截图
         //        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(caputerImage:) name:MPMoviePlayerThumbnailImageRequestDidFinishNotification object:_moviePlayer];
         //        //4退出全屏通知
         //        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(exitFullScreen) name:MPMoviePlayerDidExitFullscreenNotification object:_moviePlayer];
         
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:_moviePlayer];
+        
     }
     return _moviePlayer;
 }
 - (void)myMovieFinishedCallback:(NSNotification *)notify
 {
-//    MPMoviePlayerController *theMovie = [notify object];
-//    
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:(theMovie)];
-//    
-//    [theMovie.view removeFromSuperview];
-//    
-//    [self.navigationController popViewControllerAnimated:YES];
+    MPMoviePlayerController *theMovie = [notify object];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:(theMovie)];
+    
+    [theMovie.view removeFromSuperview];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 /*
  MPMoviePlaybackStateStopped,            //停止
